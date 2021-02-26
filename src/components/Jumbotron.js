@@ -1,19 +1,16 @@
-
 import React from "react";
 
-
 function Jumbotron() {
-    return (
-
-
-<nav className="navbar navbar-light bg-light">
-  <div className="container-fluid">
-    <span className="navbar-brand mb-0 h1">Navbar</span>
-  </div>
-</nav>
-
-);
-
+  return (
+    <div className="jumbotron jumbotron-fluid">
+      <div className="container">
+        <h1 className="display-4">Employee Information</h1>
+        <p className="lead">
+          Search for employees by name here!
+        </p>
+      </div>
+    </div>
+  );
 }
 
 export default Jumbotron;
