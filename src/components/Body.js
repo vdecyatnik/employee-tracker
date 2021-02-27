@@ -1,30 +1,22 @@
-import {  } from "react-dom";
+import {} from "react-dom";
 
-function Body(props) {
+function Body({ users }) {
+  console.log("users:", users);
   return (
     // map function of users
+
     <div className="card">
       <div className="card-body">
+        HELLO
         <ul>
-          <li>
-            <strong>Name:</strong>
-           
-            {props.name}
-            <li>
-
-            <strong>Title:</strong> 
-            {props.title}
-            </li>
-            <li>
-              <strong>Email:</strong>
-              {props.email}
-            </li>
-            <li>
-              <strong>Cell:</strong>
-              {props.cell}
-            </li>
-            
-          </li>
+          {users
+            ? users.map((user, index) => {
+                return(<li key={index}>
+                  <strong>Name:  {user.name.first}</strong>
+                  <strong>Email: {user.email}</strong>
+                </li>)
+              })
+            : ""}
         </ul>
       </div>
     </div>
