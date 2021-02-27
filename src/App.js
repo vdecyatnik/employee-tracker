@@ -7,7 +7,7 @@ import API from "./utils/API";
 
 class App extends React.Component {
   state = {
-    users: {},
+    users: [],
     search: "",
     
   };
@@ -20,7 +20,7 @@ class App extends React.Component {
     API.getEmployees(employees)
       .then((res) => {
         console.log("res", res)
-        this.setState({ users: res.data })})
+        this.setState({ users: res.results })})
         // console.log('this.state', this.state)
       .catch((err) => console.log(err));
   };
@@ -53,7 +53,9 @@ class App extends React.Component {
         />
 
         <Body
-            // users={this.state.result}
+            users={this.state.users}
+            
+           
            
          
 
