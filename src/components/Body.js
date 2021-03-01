@@ -1,4 +1,4 @@
-import {} from "react-dom";
+
 
 function Body({ users }) {
   console.log("users:", users);
@@ -7,13 +7,17 @@ function Body({ users }) {
 
     <div className="card">
       <div className="card-body">
-        HELLO
+       
         <ul>
-          {users
-            ? users.map((user, index) => {
+          {users? users.map((user, index) => {
                 return(<li key={index}>
-                  <strong>Name:  {user.name.first}</strong>
-                  <strong>Email: {user.email}</strong>
+                  <ul>
+
+                  <li><strong>Name:  {user.name.first}{user.name.last}</strong></li>
+                  <li><strong>Email: {user.email}</strong></li>
+                 <li> <strong>Phone: {user.phone}</strong></li>
+                  <li><strong>Cell: {user.cell}</strong></li>
+                  </ul>
                 </li>)
               })
             : ""}

@@ -1,13 +1,13 @@
 import axios from "axios";
-const BASEURL = "https://randomuser.me/api/?results=25";
-
-// const APIKEY = "&apikey=trilogy";
+const BASEURL = "https://randomuser.me/api/?results=30&nat=us";
 
 const API = {
   getEmployees: async function (employees) {
-    const {data} = await axios.get(BASEURL + `?results=${employees}`);
+     const {data} = await axios.get(BASEURL + `?results=${employees}`);
     return data
   },
 };
+
+
 
 export default API;

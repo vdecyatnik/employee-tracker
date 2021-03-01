@@ -7,9 +7,8 @@ import API from "./utils/API";
 
 class App extends React.Component {
   state = {
-    users: [],
     search: "",
-    
+    users: [],
   };
 
   componentDidMount() {
@@ -19,14 +18,16 @@ class App extends React.Component {
   searchEmployees = (employees) => {
     API.getEmployees(employees)
       .then((res) => {
-        console.log("res", res)
-        this.setState({ users: res.results })})
-        // console.log('this.state', this.state)
+        // console.log("res", res)
+        this.setState({ users: res.results });
+      })
+      // console.log('this.state', this.state)
       .catch((err) => console.log(err));
   };
 
   handleInputChange = (event) => {
     // Getting the value and name of the input which triggered the change
+
     const value = event.target.value;
     const name = event.target.name;
 
@@ -38,7 +39,7 @@ class App extends React.Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    this.searchMovies(this.state.search);
+    this.searchEmployees(this.state.search);
   };
 
   render() {
@@ -52,14 +53,8 @@ class App extends React.Component {
           handleFormSubmit={this.handleFormSubmit}
         />
 
-        <Body
-            users={this.state.users}
-            
-           
-           
-         
-
-        />
+        <Body users={this.state.users}
+        search={this.state.search} />
       </div>
     );
   }
