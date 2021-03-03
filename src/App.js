@@ -30,6 +30,7 @@ class App extends React.Component {
 
     const value = event.target.value;
     const name = event.target.name;
+    console.log("input", value);
 
     // Updating the input's state
     this.setState({
@@ -39,7 +40,9 @@ class App extends React.Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    this.searchEmployees(this.state.search);
+    const result = this.state.users.filter(user => user.name.first.toLowerCase() === this.state.search.toLowerCase())
+    this.setState({ users: result })
+    // this.searchEmployees(this.state.search);
   };
 
   render() {
@@ -54,7 +57,8 @@ class App extends React.Component {
         />
 
         <Body users={this.state.users}
-        search={this.state.search} />
+        search={this.state.search} 
+        />
       </div>
     );
   }

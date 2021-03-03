@@ -14,11 +14,11 @@ function Filters(props) {
           <input
             onChange={props.handleInputChange}
             name="search"
-            value={props.value}
+            value={props.search}
             placeholder="Search for an Employee"
-            type="text"
+            type="search"
             className="form-control"
-            id="nameFilter"
+            id="search"
           />
 
           
