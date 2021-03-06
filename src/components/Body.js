@@ -18,7 +18,7 @@ function Body({ users }) {
                       <strong>Name:</strong> {user.name.first} {user.name.last}
                     </li>
                     <li>
-                      <strong>Email::</strong> {user.email}
+                      <strong>Email:</strong> {user.email}
                     </li>
                     <li>
                       <strong>Cell:</strong> {user.cell}

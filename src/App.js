@@ -2,7 +2,6 @@ import React from "react";
 import Jumbotron from "./components/Jumbotron";
 import Body from "./components/Body";
 import CardSort from "./components/CardSort";
-
 import Filters from "./components/Filters";
 import API from "./utils/API";
 
@@ -25,8 +24,6 @@ class App extends React.Component {
       // console.log('this.state', this.state)
       .catch((err) => console.log(err));
   };
-
- 
 
   handleSortAs = (event) => {
     const ageSort = this.state.users.sort((a, b) => a.dob.age - b.dob.age);
@@ -72,10 +69,7 @@ class App extends React.Component {
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit}
         />
-        <CardSort
-          handleSortAs={this.handleSortAs}
-         
-        />
+        <CardSort handleSortAs={this.handleSortAs} />
         <Body users={this.state.users} search={this.state.search} />
       </div>
     );
