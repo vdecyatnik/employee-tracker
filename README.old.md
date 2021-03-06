@@ -15,3 +15,11 @@ This application was made using React.JS and Bootstrap. Users are able to view a
 
 # Images
 
+![filtersearch](Emp1.png)
+![homepage](Emp2.png)
+
+# Links
+
+Link to deployed application https://employtrack.herokuapp.com/
+
+Link to Git Hub Repository https://github.com/vdecyatnik/employee-tracker

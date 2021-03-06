@@ -18,10 +18,10 @@ class App extends React.Component {
   searchEmployees = (employees) => {
     API.getEmployees(employees)
       .then((res) => {
-        // console.log("res", res)
+        
         this.setState({ users: res.results });
       })
-      // console.log('this.state', this.state)
+     
       .catch((err) => console.log(err));
   };
 
@@ -31,7 +31,7 @@ class App extends React.Component {
       users: ageSort,
     });
 
-    console.log(this.state);
+    
   };
 
   handleInputChange = (event) => {
@@ -39,7 +39,7 @@ class App extends React.Component {
 
     const value = event.target.value;
     const name = event.target.name;
-    console.log("input", value);
+    
 
     // Updating the input's state
     this.setState({
@@ -54,13 +54,13 @@ class App extends React.Component {
         user.name.first.toLowerCase() === this.state.search.toLowerCase()
     );
     this.setState({ users: result });
-    // this.searchEmployees(this.state.search);
+    
   };
 
   render() {
     return (
       <div className="container-fluid">
-        {this.state.search}
+        
 
         <Jumbotron />
 
@@ -70,7 +70,7 @@ class App extends React.Component {
           handleFormSubmit={this.handleFormSubmit}
         />
         <CardSort handleSortAs={this.handleSortAs} />
-        <Body users={this.state.users} search={this.state.search} />
+        <Body users={this.state.users}  />
       </div>
     );
   }
