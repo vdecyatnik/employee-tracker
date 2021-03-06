@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASEURL = "https://randomuser.me/api/?results=30&nat=us";
+const BASEURL = "https://randomuser.me/api/?results=30&nat=US";
 
 const API = {
   getEmployees: async function (employees) {

@@ -6,7 +6,7 @@ function Jumbotron() {
       <div className="container">
         <h1 className="display-4">Employee Information</h1>
         <p className="lead">
-          Search for employees by name here!
+          Search for employees here!
         </p>
       </div>
     </div>
