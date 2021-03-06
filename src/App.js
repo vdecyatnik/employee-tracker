@@ -25,6 +25,16 @@ class App extends React.Component {
       .catch((err) => console.log(err));
   };
 
+
+      handleSortName = (event) => {
+        const genderSort = this.state.users.sort((a,b) => a.name.last.localeCompare(b.name.last));
+          this.setState({
+            users: genderSort,
+          });
+
+
+
+      };
   handleSortAs = (event) => {
     const ageSort = this.state.users.sort((a, b) => a.dob.age - b.dob.age);
     this.setState({
@@ -69,7 +79,8 @@ class App extends React.Component {
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit}
         />
-        <CardSort handleSortAs={this.handleSortAs} />
+        <CardSort handleSortAs={this.handleSortAs} 
+        handleSortName={this.handleSortName}/>
         <Body users={this.state.users}  />
       </div>
     );

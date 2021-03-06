@@ -12,6 +12,14 @@ function CardSort(props) {
           >
             Sort By Age
           </button>
+
+          <button
+            onClick={props.handleSortName}
+            type="button"
+            className="btn btn-secondary m-3"
+          >
+            Sort By Last Name
+          </button>
         </div>
       </div>
     </div>
