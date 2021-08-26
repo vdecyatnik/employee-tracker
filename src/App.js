@@ -1,8 +1,9 @@
 import React from "react";
-import Jumbotron from "./components/Jumbotron";
+import Jumbotron from "./components/Jumbotron/Jumbotron";
 import Body from "./components/Body";
-import CardSort from "./components/CardSort";
+// import CardSort from "./components/CardSort";
 import Filters from "./components/Filters";
+import Nav from "./components/Nav";
 import API from "./utils/API";
 
 class App extends React.Component {
@@ -18,30 +19,25 @@ class App extends React.Component {
   searchEmployees = (employees) => {
     API.getEmployees(employees)
       .then((res) => {
-        
         this.setState({ users: res.results });
       })
-     
+
       .catch((err) => console.log(err));
   };
 
-
-      handleSortName = (event) => {
-        const genderSort = this.state.users.sort((a,b) => a.name.last.localeCompare(b.name.last));
-          this.setState({
-            users: genderSort,
-          });
-
-
-
-      };
+  handleSortName = (event) => {
+    const genderSort = this.state.users.sort((a, b) =>
+      a.name.last.localeCompare(b.name.last)
+    );
+    this.setState({
+      users: genderSort,
+    });
+  };
   handleSortAs = (event) => {
     const ageSort = this.state.users.sort((a, b) => a.dob.age - b.dob.age);
     this.setState({
       users: ageSort,
     });
-
-    
   };
 
   handleInputChange = (event) => {
@@ -49,7 +45,6 @@ class App extends React.Component {
 
     const value = event.target.value;
     const name = event.target.name;
-    
 
     // Updating the input's state
     this.setState({
@@ -64,24 +59,28 @@ class App extends React.Component {
         user.name.first.toLowerCase() === this.state.search.toLowerCase()
     );
     this.setState({ users: result });
-    
   };
 
   render() {
     return (
       <div className="container-fluid">
-        
-
+        <Nav />
         <Jumbotron />
 
         <Filters
           value={this.state.search}
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit}
+          handleSortAs={this.handleSortAs}
+          handleSortName={this.handleSortName}
         />
-        <CardSort handleSortAs={this.handleSortAs} 
-        handleSortName={this.handleSortName}/>
-        <Body users={this.state.users}  />
+        {/* <CardSort
+          handleSortAs={this.handleSortAs}
+          handleSortName={this.handleSortName}
+        /> */}
+        <Body users={this.state.users}
+       
+         />
       </div>
     );
   }

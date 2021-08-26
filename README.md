@@ -11,6 +11,7 @@
 
 # Description
 
+
 This application was made using React.JS and Bootstrap. Users are able to view a directory of all employees in the system. Only non sensitive data is rendered on the page for each employee. There is a filter by name section as well as a sort by age button. 
 
 # Images
